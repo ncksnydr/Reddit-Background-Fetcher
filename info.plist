@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.ncksnydr.bg</string>
+	<key>connections</key>
+	<dict>
+		<key>0F191FA8-9F4A-424B-B21A-146200766EF4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2AE2ED6C-04D3-4EAE-9423-B7531329E55F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>2AE2ED6C-04D3-4EAE-9423-B7531329E55F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>25B320DB-E725-4921-8E82-7D5EBAE9CB44</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>564EBE10-C8A9-499B-8011-E234C9EA6B47</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8C7A06ED-68A8-4A66-B0C2-FEBDAFBCB67E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8C7A06ED-68A8-4A66-B0C2-FEBDAFBCB67E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D6EEA7ED-5BC6-408C-80FF-8074199263FD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Nick Snyder</string>
+	<key>description</key>
+	<string>Grab desktop images from a subreddit</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Reddit Background Fetcher</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Backgrounds Fetched</string>
+				<key>title</key>
+				<string>Done</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D6EEA7ED-5BC6-408C-80FF-8074199263FD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>script</key>
+				<string>/*
+		
+  $subreddit - [Name of Subreddit from URL; after /r/]
+  $type - [top,new,hot]
+  $range - [hour,day,week,month,year,all]
+  $save_path - Where you want the images to go.
+		
+*/
+
+	$subreddit = 'EarthPorn';
+	$type = 'top';
+	$range = 'day';
+	$save_path = 'Documents/Backgrounds/';
+	$min_bg_width = 3300;	
+
+	require_once('bg.php');</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8C7A06ED-68A8-4A66-B0C2-FEBDAFBCB67E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>bg</string>
+				<key>subtext</key>
+				<string>Fetches desktop background images from your favorite subreddit.</string>
+				<key>text</key>
+				<string>Fetch backgrounds</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>564EBE10-C8A9-499B-8011-E234C9EA6B47</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Background cache cleared.</string>
+				<key>title</key>
+				<string>Cleared</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>25B320DB-E725-4921-8E82-7D5EBAE9CB44</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>bg-clear</string>
+				<key>subtext</key>
+				<string>Clears the Reddit Background Fetcher cache file.</string>
+				<key>text</key>
+				<string>Clear cache</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0F191FA8-9F4A-424B-B21A-146200766EF4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>rm cache.txt</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2AE2ED6C-04D3-4EAE-9423-B7531329E55F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0F191FA8-9F4A-424B-B21A-146200766EF4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>170</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>25B320DB-E725-4921-8E82-7D5EBAE9CB44</key>
+		<dict>
+			<key>xpos</key>
+			<integer>510</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>2AE2ED6C-04D3-4EAE-9423-B7531329E55F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>340</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>564EBE10-C8A9-499B-8011-E234C9EA6B47</key>
+		<dict>
+			<key>xpos</key>
+			<integer>170</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>8C7A06ED-68A8-4A66-B0C2-FEBDAFBCB67E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>340</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>D6EEA7ED-5BC6-408C-80FF-8074199263FD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>510</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>http://nicksnyder.is</string>
+</dict>
+</plist>

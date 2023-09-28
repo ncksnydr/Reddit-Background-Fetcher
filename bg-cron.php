@@ -42,20 +42,11 @@ if ($type == 'top' && isset($range)) {
     $feed_url = "https://www.reddit.com/r/{$subreddit}/{$type}.json";
 }
 
-
-// $contextOptions = array(
-// 	"ssl" => array(
-// 		"verify_peer" => false,
-// 		"verify_peer_name" => false,
-// 	),
-// );
-
 $contextOptions = array(
     'http' => array(
         'header' => array('User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201'),
     )
 );
-
 
 /** Pull entries from the feed */
 $feed = file_get_contents($feed_url, false, stream_context_create($contextOptions));
@@ -68,7 +59,6 @@ foreach ($entries as $entry) {
     $data = $entry['data'];
     $data_id = $data['id'];
     $img = $data['preview']['images'];
-    //$img = $data['url'];
     $filename = $data_id . '.jpg';
     $file = $save_path . $filename;
     $in_cache = getCache($filename);
@@ -81,7 +71,6 @@ foreach ($entries as $entry) {
             $img_height = $img['height'];
 
             if ($img_width >= $min_bg_width && $img_width > $img_height) {
-                // var_dump($img_url);
                 copy($img_url, $file, stream_context_create($contextOptions));
                 setCache($filename);
             }
