@@ -1,0 +1,76 @@
+# ====================================================== #
+#    GITIGNORE                                           #
+# ====================================================== #
+
+#   Project
+# ------------------------------------------------------------
+# Global
+dist
+node_modules
+vendor
+
+# Backups
+src/config/backups
+
+# Configuration
+src/config/certs
+
+# Files
+.env
+.env-svrvs
+mix-manifest.json
+cache.txt
+info.plist
+log.txt
+
+
+#   Commons
+# ------------------------------------------------------------
+# Configuration
+*.crt
+*.key
+
+# Build
+*.bak
+*.log
+*.min.*
+
+# Binary
+*.gif
+*.gz.zip
+*.jpg
+*.m4v
+*.mp4
+*.ogg
+*.ogv
+*.png
+*.webm
+*.webp
+*.zip
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
