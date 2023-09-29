@@ -2,27 +2,6 @@
 #    GITIGNORE                                           #
 # ====================================================== #
 
-#   Project
-# ------------------------------------------------------------
-# Global
-dist
-node_modules
-vendor
-
-# Backups
-src/config/backups
-
-# Configuration
-src/config/certs
-
-# Files
-.env
-.env-svrvs
-mix-manifest.json
-cache.txt
-log.txt
-
-
 #   Commons
 # ------------------------------------------------------------
 # Configuration
@@ -73,3 +52,25 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+#   Project
+# ------------------------------------------------------------
+# Global
+dist
+node_modules
+vendor
+
+# Backups
+src/config/backups
+
+# Configuration
+src/config/certs
+
+# Files
+.env
+.env-svrvs
+mix-manifest.json
+cache.txt
+log.txt
+!icon.png
