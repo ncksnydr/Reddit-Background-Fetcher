@@ -6,6 +6,8 @@ The script uses the Reddit's JSON API (yes—it still works) to download images 
 
 For the most optimal workflow, set your Wallpaper directory to where the images download and set to randomly Auto-Rotate.
 
+**Developer note**: Usually I would not commit `.png` images to a repository, but I am doing it here for a pleasent experience with `icon.png` in the Alfred prompt.
+
 ## With Alfred
 
 ### Installation
@@ -16,6 +18,13 @@ For the most optimal workflow, set your Wallpaper directory to where the images 
 - Create a new blank workflow.
 - Right-click workflow; select _Open in Finder_.
 - Place files from downloaded repository into the opened directory.
+
+### Usage
+
+- Trigger the Alfred prompt (`CMD + Space` _by default_)
+- Type `bg` to reveal `Fetch backgrounds` and `Clear cache`.
+  - `Fetch backgrounds` will run the script and download backgrounds based on your options.
+  - `Clear cache` will, believe it or not, clear the cache of previously downloaded file names.
 
 ### Configuration
 
